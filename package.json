@@ -1,0 +1,13 @@
+{
+  "name": "cohost",
+  "version": "1.0.0",
+  "description": "Tools for Cohost",
+  "main": "index.js",
+  "author": "John Colagioia",
+  "license": "AGPL-3.0-or-later",
+  "private": false,
+  "dependencies": {
+    "argumentate": "^3.0.0",
+    "cohost": "^0.0.3"
+  }
+}
