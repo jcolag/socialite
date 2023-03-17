@@ -49,4 +49,21 @@ const { options, variables } = argumentate({
 
   console.log(posts);
   return;
+
+  const adult = Object.prototype.hasOwnProperty.call(options, 'adult_content');
+  const cw = Object.prototype.hasOwnProperty.call(options, 'content_warning')
+    ? [ options.content_warning ]
+    : [];
+  const headline = Object.prototype.hasOwnProperty.call(options, 'headline')
+    ? options.headline
+    : null;
+  const markdown = {
+    type: 'markdown',
+    markdown: {
+      content: options.status,
+    },
+  };
+  const tags = Object.prototype.hasOwnProperty.call(options, 'tags')
+    ? options.tags.split(',').map((t) => t.trim())
+    : [];
 })();
