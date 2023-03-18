@@ -66,4 +66,34 @@ const { options, variables } = argumentate({
   const tags = Object.prototype.hasOwnProperty.call(options, 'tags')
     ? options.tags.split(',').map((t) => t.trim())
     : [];
+
+  await cohost.Post.create(project, {
+    postState: 1,
+    headline: headline,
+    adultContent: adult,
+    blocks: [ markdown ],
+    cws: cw,
+    tags: tags,
+  });
+
+  // Create a draft with attachments
+
+  // 1. Create a draft
+  const draftId = await cohost.Post.create(myProject, basePost);
+
+  // 2. Upload the attachment
+  const attachmentData = await myProject.uploadAttachment(
+    draftId,
+    path.resolve(__dirname, './02-15_One_pr.png')
+  );
+
+  // 3. Add the attachment block to the draft and publish it
+  await cohost.Post.update(myProject, draftId, {
+    ...basePost,
+    postState: 1,
+    blocks: [
+      ...basePost.blocks,
+      { type: 'attachment', attachment: { ...attachmentData } }
+    ]
+  });
 })();
