@@ -1,2 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2023 John Colagioia <john@colagioia.net>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 # socialite
 A collection of small (and probably temporary) tools for interacting with new social networks

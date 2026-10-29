@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2023 John Colagioia <john@colagioia.net>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 #!/usr/bin/env node
 const argumentate = require('argumentate');
 const cohost = require('cohost');
